@@ -850,7 +850,7 @@ module.exports = {
     let country = community.address.country;
     let mainAddress = first_address_line + ',' + city + ',' + state + ',' + country;
 
-    const endpoint = `https://maps.googleapis.com/maps/api/geocode/json?address=${mainAddress}&key=AIzaSyBgy2C5c_KZlD1T5qiFimpWSQml4ZmFsf0`;
+    const endpoint = `https://maps.googleapis.com/maps/api/geocode/json?address=${mainAddress}&key`;
 
 
     const response = await axios({
