@@ -1,0 +1,312 @@
+{
+  "video": [
+    {
+      "id": 1,
+      "title": "Post 1",
+      "content": "This is the full content of post 1 This is the full content of post 1",
+      "image": "./images/video-1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Post 2",
+      "content": " This is the full content of post 2 This is the full content of post 2 This is the full content of post 2",
+      "image": "./images/video-2.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Post 3",
+      "content": "This is the full content of post 3 his is the full content of post 3 his is the full content of post 3",
+      "image": "./images/video-3.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Post 4",
+      "content": "This is the full content of post 4 This is the full content of post 4 This is the full content of post 4",
+      "image": "./images/video-3.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Post 5",
+      "content": "This is the full content of post 5 This is the full content of post 5 This is the full content of post 5",
+      "image": "./images/video-1.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Post 6",
+      "content": "This is the full content of post 6 his is the full content of post 6 This is the full content of post 6",
+      "image": "./images/video-1.jpg"
+    }
+  ],
+  "announce": [
+    {
+      "id": 1,
+      "title": "Post 1",
+      "content": "This is the full content of post 1 This is the full content of post 1 This is the full content of post 1",
+      "image": "./images/announcements-1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Post 2",
+      "content": "This is the full content of post 2 This is the full content of post 1 This is the full content of post 1",
+      "image": "./images/announcements-2.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Post 3",
+      "content": "This is the full content of post 3 This is the full content of post 1 This is the full content of post 1",
+      "image": "./images/announcements-3.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Post 4",
+      "content": "This is the full content of post 4 This is the full content of post 1 This is the full content of post 1",
+      "image": "./images/announcements-1.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Post 5",
+      "content": "This is the full content of post 5 This is the full content of post 1 This is the full content of post 1",
+      "image": "./images/announcements-1.jpg"
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "title": "Post 1",
+      "content": "This is the full content of post 1 This is the full content of post 1 This is the full content of post 122",
+      "image": "./images/events-1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Post 2",
+      "content": "This is the full content of post 2 This is the full content of post 1 This is the full content of post 1",
+      "image": "./images/events-2.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Post 3",
+      "content": "This is the full content of post 3 This is the full content of post 1 This is the full content of post 1",
+      "image": "./images/events-3.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Post 4",
+      "content": "This is the full content of post 4 This is the full content of post 1 This is the full content of post 1",
+      "image": "./images/events-1.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Post 5",
+      "content": "This is the full content of post 5 This is the full content of post 1 This is the full content of post 1",
+      "image": "./images/events-1.jpg"
+    }
+  ],
+  "pastevents": [
+    {
+      "id": 1,
+      "title": "Post 1",
+      "content": "This is the full content of post 1",
+      "image": "./images/events-1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Post 2",
+      "content": "This is the full content of post 2",
+      "image": "./images/events-1.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Post 3",
+      "content": "This is the full content of post 3",
+      "image": "./images/events-1.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Post 4",
+      "content": "This is the full content of post 4",
+      "image": "./images/events-1.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Post 5",
+      "content": "This is the full content of post 5",
+      "image": "./images/events-1.jpg"
+    }
+  ],
+  "memberevents": [
+    {
+      "id": 1,
+      "title": "Post 1",
+      "content": "This is the full content of post 1",
+      "image": "./images/events-1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Post 2",
+      "content": "This is the full content of post 2",
+      "image": "./images/events-2.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Post 3",
+      "content": "This is the full content of post 3",
+      "image": "./images/events-3.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Post 4",
+      "content": "This is the full content of post 4",
+      "image": "./images/events-4.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Post 5",
+      "content": "This is the full content of post 5",
+      "image": "./images/events-5.jpg"
+    }
+  ],
+  "publicannouncements": [
+    {
+      "id": 1,
+      "title": "Post 111",
+      "content": "This is the full content of post 11111",
+      "image": "./images/announcements-1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Post 2",
+      "content": "This is the full content of post 2",
+      "image": "./images/announcements-1.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Post 3",
+      "content": "This is the full content of post 3",
+      "image": "./images/announcements-1.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Post 4",
+      "content": "This is the full content of post 4",
+      "image": "./images/announcements-1.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Post 5",
+      "content": "This is the full content of post 5",
+      "image": "./images/announcements-1.jpg"
+    }
+  ],
+  "memberannouncements": [
+    {
+      "id": 1,
+      "title": "Post 1",
+      "content": "This is the full content of post 1",
+      "image": "./images/events-1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Post 2",
+      "content": "This is the full content of post 2",
+      "image": "./images/events-1.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Post 3",
+      "content": "This is the full content of post 3",
+      "image": "./images/events-1.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Post 4",
+      "content": "This is the full content of post 4",
+      "image": "./images/events-1.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Post 5",
+      "content": "This is the full content of post 5",
+      "image": "./images/events-1.jpg"
+    }
+  ],
+  "aboutus": [
+    {
+      "id": 1,
+      "name": "sam",
+      "label": "sam curran",
+      "image": "./images/about.jpg"
+    },
+    {
+      "id": 2,
+      "name": "sam",
+      "label": "sam curran",
+      "image": "./images/about.jpg"
+    },
+    {
+      "id": 3,
+      "name": "sam",
+      "label": "sam curran",
+      "image": "./images/about.jpg"
+    },
+    {
+      "id": 4,
+      "name": "sam",
+      "label": "sam curran",
+      "image": "./images/about.jpg"
+    },
+    {
+      "id": 5,
+      "name": "sam",
+      "label": "sam curran",
+      "image": "./images/about.jpg"
+    },
+    {
+      "id": 6,
+      "name": "sam",
+      "label": "sam curran",
+      "image": "./images/about.jpg"
+    }
+  ],
+  "communityName": [
+    {
+      "id": 1,
+      "name": "community 1",
+      "type": "cultural",
+      "writtenBy": "john doe",
+      "createdDate": "26/07/2023",
+      "image": "./images/landing-community-1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "community 2",
+      "type": "cultural",
+      "writtenBy": "sam doe",
+      "createdDate": "26/07/2023",
+      "image": "./images/landing-community-2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "community 3",
+      "type": "cultural",
+      "writtenBy": "sumit",
+      "createdDate": "26/07/2023",
+      "image": "./images/landing-community-3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "community 3",
+      "type": "cultural",
+      "writtenBy": "sumit",
+      "createdDate": "26/07/2023",
+      "image": "./images/landing-community-3.jpg"
+    },
+    {
+      "id": 5,
+      "name": "community 3",
+      "type": "cultural",
+      "writtenBy": "sumit",
+      "createdDate": "26/07/2023",
+      "image": "./images/landing-community-3.jpg"
+    }
+  ]
+}

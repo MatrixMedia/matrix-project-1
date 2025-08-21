@@ -1,0 +1,44 @@
+
+
+
+      <div class="modal-header">
+        <h5 class="modal-title">Event Details</h5>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal_body_blockBg">
+          <div class="modalBody_row">
+            <p>
+              <strong>Event Name : &nbsp; </strong> {{eventData?.title}}
+            </p>
+          </div>
+          <div class="modalBody_row">
+            <p>
+              <strong>Event Type : &nbsp; </strong> {{eventData?.type}}
+            </p>
+          </div>
+          <div class="modalBody_row">
+            <p>
+              <strong>Event Description : &nbsp; </strong> {{eventData?.description}}
+            </p>
+          </div>
+          <div class="modalBody_row">
+            <p>
+              <strong>Event Creator : &nbsp; </strong> {{eventData?.hostId}}
+            </p>
+          </div>
+          <div class="modalBody_row">
+            <p>
+              <strong>Creation Date : &nbsp; </strong> {{eventData?.date.from | date:'dd/MM/YYYY'}}
+            </p>
+          </div>
+          
+          <!-- <div class="modalBody_row">
+            <p>
+              <strong>Comunity Description : &nbsp; </strong> {{groupData?.myCommunity?.communityDescription}}
+            </p>
+          </div> -->
+        </div>
+      </div>
+
+

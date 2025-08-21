@@ -1,0 +1,15 @@
+
+
+{
+    "name":"sangarahi.org-server-staging",
+    "script": "./pages/index.js",
+    "watch": true,
+    "ignore_watch" : ["v1/logs", "node_modules", "v1/uploads"],
+    "instances" : "2",
+    "exec_mode" : "cluster",
+    "watch_options": {
+      "followSymlinks": false
+    },
+    "error_file": "v1/logs/error.log",
+    "out_file": "v1/logs/access.log"
+  }

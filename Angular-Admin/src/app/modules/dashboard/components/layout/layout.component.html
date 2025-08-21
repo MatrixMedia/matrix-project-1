@@ -1,0 +1,272 @@
+<mat-card-content>
+
+<!-- ====  header start ==== -->
+<header class="header_sec">
+  <div class="header_logo_sec">
+    <a href="javascript:void(0)">
+      <img class="header_logo" src="assets/images/sangarahi-logo-01.png">
+    </a>
+  </div>
+  <div class="header_block_sec">
+    <div class="header_block_left">
+      <div class="header_search_block">
+        <form [formGroup]="searchForm">
+          <div class="header_search">
+            <input class="input_appearance_none" type="text" placeholder="Search" formControlName="search" (keyup)="globalSearch()">
+            <!-- <button type="reset" class="button_appearance_none header_search_close_btn">
+              <img class="search_btn_icon" src="assets/images/close.png" >
+            </button> -->
+            <button type="reset" class="button_appearance_none header_search_btn" *ngIf="searchForm.value.search !== ''" (click)="clearSearch()">
+              <img class="search_btn_icon" src="assets/images/close.png" >
+            </button>
+            <button type="submit" class="button_appearance_none header_search_btn" *ngIf="searchForm.value.search === ''" (click)="globalSearch()">
+              <img class="search_btn_icon" src="assets/images/search_btn_icon.png" >
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="header_block_right">
+      <ng-container *ngIf="length > 1">
+        <div class="header_right_block community_btn_block">
+          <button type="button" class="button_appearance_none switch_comm_btn" (click)="switchCommunityOpenModal()">Switch Community</button>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="length === 1">
+        <div class="header_right_block community_btn_block">
+          <button type="submit" class="button_appearance_none switch_comm_btn pointer_event_none" (click)="switchCommunityOpenModal()">{{comName}}</button>
+        </div>
+      </ng-container>
+
+      <ng-container>
+        <div class="header_right_block bell_btn_block">
+          <button type="submit" class="button_appearance_none bell_btn" (click)="showNotification()">
+            <img class="bell_icon" src="assets/images/header-bell-icon.png">
+          </button>
+
+          <div class="bell_icon_dot" *ngIf="hasNewNotifications"> </div>
+        <!--
+          <div class="bell_icon_number">
+            <span>99+</span>
+          </div>
+        -->
+
+        </div>
+      </ng-container>
+
+
+
+      <div class="header_right_block avatar_btn_block">
+        <button type="submit" class="button_appearance_none user_avater_btn" [matMenuTriggerFor]="menu">
+          <img class="user_avatar_img" src="{{image ? image : 'assets/images/header-user.png'}}">
+        </button>
+      </div>
+
+
+      <mat-menu #menu="matMenu" class="logoutMat">
+        <!---View My Profile-->
+        <button class="matMenu_btn" mat-menu-item (click)="viewProfile()">My Profile</button>
+        <!---Edit Profile--->
+        <button class="matMenu_btn" mat-menu-item (click)="editProfile()">My Community Profile</button>
+        <!---Logou-->
+        <button class="matMenu_btn" mat-menu-item (click)="logout()">Logout</button>
+
+      </mat-menu>
+
+
+
+    </div>
+  </div>
+</header>
+<!-- ====  header end ==== -->
+
+
+<!-- header end -->
+
+ <!-- Sidebar start -->
+    <!-- <div class="sidebar" #sidebar>
+            <div class="sidenav">
+              <a routerLink="active-members">Active Members</a>
+            </div>
+
+            <button
+            class="rounded-circle border-0"
+            id="sidebarToggle"
+            #sidebarToggleBtn
+            ></button>
+    </div>   -->
+<!-- ====  Main Body BG start ==== -->
+<div class="main_body_bg">
+
+    <!-- ====   Lift Sidebar section -- start  ==== -->
+  <div class="left_sidebar_bg">
+    <div class="left_sidebar">
+      <ul class="sidebar_ul" >
+
+
+        <li *ngFor="let menu of menuList; index as i" [routerLink]="menu.routerLink"  [routerLinkActive]="menu.routerLinkActiveClass" (click)="removeClass(menu.routerLink)" [class]="currentRoute.includes(menu.routerLink) ? '' : 'normal'" >
+          <div class="sidemenu_block">
+            <div class="sidemenu_icon">
+              <img class="sidebarIcon_normal" [src]="menu.normalIcon">
+              <img class="sidebarIcon_active" [src]="menu.activeIcon">
+            </div>
+            <div class="sidemenu_link_block">
+              <ul class="sub_menu_ul">
+                <li  *ngFor="let menuitem of menu.content; index as i">
+                  <a [routerLink]="menuitem.routerLink" >{{menuitem.text}}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+  <!-- ====   Lift Sidebar section -- end  ==== -->
+
+  <!-- ====  Main Body right start ==== -->
+  <div class="main_right_section_bg">
+    <div class="content_body_bg">
+        <!-- Content start -->
+        <router-outlet></router-outlet>
+         <!-- Content end -->
+    </div>
+    <div class="footer_sec">
+      <div class="footer_copyRight_sec">
+        <p>© SangaRaahi. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+  <!-- ====  Main Body right end ==== -->
+</div>
+<!-- ====  Main Body BG end ==== -->
+
+<!-- Content start -->
+<!-- <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content">
+      <div class="container-fluid">
+
+      </div>
+    </div>
+  </div> -->
+
+
+
+<!-- footer start -->
+<!-- footer end -->
+
+<!------Open Switch Modal------>
+<div class="modal fade custom_modal" id="switchingCommunitity">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Choose one community<br> to continue</h5>
+      </div>
+      <div class="modal-body">
+        <div class="modal_body_list_box">
+
+          <div *ngFor="let communitityList of communities; let i = index"  [class]="communitityList.id === comId ? 'active' : ''" (click)="switchCommunity(communitityList.id,communitityList.logoImage)"  class="community_btn_block_modal" style="cursor: pointer;">
+            <!-- <span [class]="communitityList.id === comId ? 'active' : ''"> -->
+              <span class="modal_switchCommunity_linkLogo">
+                <img class="switchCommunity_linkLogo_img" src="{{communitityList.logoImage || 'assets/images/event-activity-01.jpg'}}">
+                <!-- <img class="switchCommunity_linkLogo_img switchCommunity_linkLogo_img_default" src="{{communitityList.logoImage || 'assets/images/camera-img.png'}}" style="display: none;"> -->
+              </span>
+              <span>
+              {{communitityList.communityName}} ({{communitityList.role}})
+              </span>
+          </div>
+          <div *ngIf="!communities?.length"> No active organisation found.</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!---End Switch Modal-->
+
+<!------Open  Modal For Notification------>
+<div class="modal fade custom_modal notification_modal" id="notficationCommunitity">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Notification Details</h5>
+      </div>
+      <div class="modal-body">
+
+        <div class="modal_body_list_box">
+          <div class="community_btn_block_modal ng-star-inserted" *ngFor="let item of notificationDetails; let i = index">
+            <span class="modal_switchCommunity_linkLogo">
+              <img class="switchCommunity_linkLogo_img" src="assets/images/check-icon-2.png">
+            </span>
+            <span> {{item.text}}</span>
+            <!-- <span class="switchCommunity_link_dateTime">22/08/2023 - 18:06</span> -->
+            <span class="switchCommunity_link_dateTime">{{item.sentAt | date:'dd/MM/yyyy'}} - {{item.sentAt | date:'hh:mm a'}}</span>
+          </div>
+
+          <!-- <div class="community_btn_block_modal active ng-star-inserted" style="cursor: pointer;">
+            <span class="modal_switchCommunity_linkLogo">
+              <img class="switchCommunity_linkLogo_img" src="assets/images/check-icon-2.png">
+            </span>
+            <span> Arnab's Community (Board Member) </span>
+            <span class="switchCommunity_link_dateTime">22/08/2023 - 18:06</span>
+          </div> -->
+          <!-- <div class="community_btn_block_modal ng-star-inserted" style="cursor: pointer;">
+            <span class="modal_switchCommunity_linkLogo">
+              <img class="switchCommunity_linkLogo_img" src="assets/images/check-icon-2.png">
+            </span>
+            <span> Community 1 (Board Member) </span>
+            <span class="switchCommunity_link_dateTime">22/08/2023 - 18:06</span>
+          </div>
+          <div class="community_btn_block_modal ng-star-inserted" style="cursor: pointer;">
+            <span class="modal_switchCommunity_linkLogo">
+              <img class="switchCommunity_linkLogo_img" src="assets/images/check-icon-2.png">
+            </span>
+            <span> Test (Executive Member) </span>
+            <span class="switchCommunity_link_dateTime">22/08/2023 - 18:06</span>
+          </div> -->
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!---End Switch Modal-->
+
+
+<!------Open Search Modal------>
+<div class="modal fade custom_modal" id="globalSearchId">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- <div class="modal-header">
+        <h5 class="modal-title">Choose one community<br> to continue</h5>
+      </div> -->
+      <div class="modal-body">
+            <div *ngIf="announcements?.length" style="cursor: pointer;" (click)="announcementSearch()">Announcement</div>
+            <div *ngIf="events?.length" style="cursor: pointer;" (click)="EventSearch()">Event</div>
+            <div *ngIf="groups?.length" style="cursor: pointer;" (click)="groupSearch()">Group</div>
+            <!-- <div *ngIf="videos?.length">videos</div> -->
+            <div *ngIf="communityfeedbacks?.length" style="cursor: pointer;" (click)="feedbackSearch()">Feedback</div>
+            <div *ngIf="(!announcements?.length) && (!events?.length) && (!groups?.length) && (!videos?.length) && (!communityfeedbacks?.length)"> No recent items match your search.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!---End Search Modal-->
+
+<!-- <div class="filter_input_box filter_search_select">
+  <select *ngIf="searchForm.value">
+        <option *ngIf="announcements?.length">Announcement</option>
+        <option *ngIf="announcements?.length">Event</option>
+        <option *ngIf="announcements?.length">Group</option>
+        <option *ngIf="announcements?.length">Feedback</option>
+        <option *ngIf="(!announcements?.length) && (!events?.length) && (!groups?.length) && (!videos?.length) && (!communityfeedbacks?.length)" disabled>No recent items match your search.</option>
+  </select>
+</div> -->
+</mat-card-content>
+
+<app-notification (sendMessage)="getMessage($event)"></app-notification>

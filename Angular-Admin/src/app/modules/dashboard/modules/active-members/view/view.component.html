@@ -1,0 +1,320 @@
+<!--
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Active Member Detrails:</h3>
+    <div>
+       <p>User Type: <span>{{activeMemberDetails.userType ? activeMemberDetails.userType : 'N/A'}}</span></p>
+       <p>Name: <span>{{activeMemberDetails.name ? activeMemberDetails.name : 'N/A'}}</span></p>
+       <p>Email: <span>{{activeMemberDetails.email ? activeMemberDetails.email : 'N/A'}}</span></p>
+       <p>Phone: <span>{{activeMemberDetails.phone ? activeMemberDetails.phone : 'N/A'}}</span></p>
+       <p>Status: <span>{{activeMemberDetails.isActive ? 'Active' : 'Inactive'}}</span></p>
+       <p>Address: <span>{{activeMemberDetails.address ? activeMemberDetails.address : 'N/A'}}</span></p>
+       <p>City: <span>{{activeMemberDetails.city ? activeMemberDetails.city : 'N/A'}}</span></p>
+       <p>Zipcode: <span>{{activeMemberDetails.zipcode ? activeMemberDetails.zipcode : 'N/A'}}</span></p>
+    </div>
+</body>
+</html>
+
+
+
+=============================
+
+ -->
+
+
+
+<div class="dashboard_panel_bg memberlistpage">
+  <!-- page title -- section -- start  -->
+  <div class="page_top_title">
+    <h4>{{comName}}</h4>
+  </div>
+  <!-- page title -- section -- end  -->
+  <!-- filter and heading area start -->
+  <div class="filter-headingArea">
+      <h4 class="block_sec_title headeingArea">Active member list</h4>
+      <div class="filterArea">
+          <!-- <a href="javascript:void(0)" class="_filterSearch_iconBtn" >
+            <img src="assets/images/filter-search-icon.png" />
+          </a>
+          <a href="javascript:void(0)" class="filter" >Filter</a> -->
+          <a href="javascript:void(0)" class="track" (click)="track()">Track</a>
+          <a href="javascript:void(0)" class="pinkbtnsmall" (click)="onboardUser()">Onboard Users</a>
+      </div>
+  </div>
+  <!-- ===  new filter search start === -->
+
+  <!-- ===  new filter search end === -->
+
+  <!-- ===  new filter section -- adjust start === -->
+
+  <!-- ===  new filter section -- adjust end === -->
+
+  <!-- ===  new filter section start === -->
+
+  <!-- ===  new filter section end === -->
+  <!-- filter and heading area end -->
+
+  <!-- ===  Active member section -- start === -->
+
+  <div class="active_member_sec_bg">
+    <!-- member details top section -- start ---  -->
+      <div class="top_back_section">
+        <a href="javascript:void(0)" (click)="back()">Back to Member List</a>
+      </div>
+      <div class="member_top_sec">
+        <div class="member_top_left_sec">
+          <div class="memberDetails_round_img memberDetails_round_img_border">
+            <img src="{{activeMemberDetails?.profileImage ? activeMemberDetails.profileImage : 'assets/images/header-user.png'}}" alt="">
+            <!-- <img src="assets/images/announcement-img-01.jpg"> -->
+          </div>
+          <div class="member_details_des">
+            <h3>{{activeMemberDetails?.name ? activeMemberDetails.name : 'N/A'}}</h3>
+            <p>{{addActiveMemberDetails?.role ? addActiveMemberDetails.role : 'N/A'}}</p>
+            <!-- <p>{{activeMemberDetails.id ? activeMemberDetails.id : 'N/A'}}</p> -->
+          </div>
+        </div>
+        <div class="member_top_right_sec">
+          <ul class="mem_details_top_ul">
+            <li>About the user:  I am passionate painter & digital illustrator</li>
+            <li>No of Family Members:  {{addActiveMemberDetails?.totalFamilyMembers}}</li>
+          </ul>
+        </div>
+      </div>
+      <!-- member details top section -- end ---  -->
+      <!-- member details mid block section -- start ---  -->
+      <div class="details_block_bg">
+        <!-- details_block_box -- left -- start  -->
+        <div class="details_block_box">
+          <h4>Personal Details</h4>
+          <div class="destails_list">
+            <ul>
+              <li>
+                <div class="details_list_block details_list_block_left">
+                  Email
+                </div>
+                <div class="details_list_block details_list_block_right">
+                  {{activeMemberDetails?.email ? activeMemberDetails.email : 'N/A'}}
+                </div>
+              </li>
+              <li>
+                <div class="details_list_block details_list_block_left">
+                  Phone number
+                </div>
+                <div class="details_list_block details_list_block_right">
+                  {{activeMemberDetails?.phoneCode ? activeMemberDetails.phoneCode : ''}} {{activeMemberDetails?.phone ? activeMemberDetails.phone : 'N/A'}}
+                </div>
+              </li>
+              <li>
+                <div class="details_list_block details_list_block_left">
+                  YOB
+                </div>
+                <div class="details_list_block details_list_block_right">
+                  <ng-container *ngIf="activeMemberDetails?.yearOfBirth">
+                    <!-- {{activeMemberDetails?.dateOfBirth['value'] | date: 'MMMM d'}} -->
+                    {{activeMemberDetails?.yearOfBirth}}
+                  </ng-container>
+                  <ng-container *ngIf="activeMemberDetails?.yearOfBirth === null">
+                    {{'N/A'}}
+                  </ng-container>
+                </div>
+              </li>
+              <li>
+                <div class="details_list_block details_list_block_left">
+                  Gender
+                </div>
+                <div class="details_list_block details_list_block_right">
+                  {{activeMemberDetails?.gender ? activeMemberDetails.gender : 'N/A'}}
+                </div>
+              </li>
+              <li>
+                <div class="details_list_block details_list_block_left">
+                  Profession
+                </div>
+                <div class="details_list_block details_list_block_right">
+                  <ng-container *ngIf="activeMemberDetails?.profession.length > 0">
+                    {{activeMemberDetails?.profession.join(',')}}
+                  </ng-container>
+                  <ng-container *ngIf="activeMemberDetails?.profession.length === 0">
+                    {{'N/A'}}
+                  </ng-container>
+                </div>
+              </li>
+              <li>
+                <div class="details_list_block details_list_block_left">
+                  Hobbies
+                </div>
+                <div class="details_list_block details_list_block_right">
+                  <ng-container *ngIf="activeMemberDetails?.hobbies.length > 0">
+                    {{activeMemberDetails?.hobbies.join(',')}}
+                  </ng-container>
+                  <ng-container *ngIf="activeMemberDetails?.hobbies.length === 0">
+                    {{'N/A'}}
+                  </ng-container>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- details_block_box -- left -- end  -->
+        <!-- details_block_box -- right -- start  -->
+        <div class="details_block_box">
+          <h4>Residential Details</h4>
+          <div class="destails_list">
+            <ul>
+              <li>
+                <div class="details_list_block details_list_block_left">
+                  Address 1
+                </div>
+                <div class="details_list_block details_list_block_right">
+                  {{activeMemberDetails?.firstAddressLine ? activeMemberDetails.firstAddressLine : 'N/A'}}
+                </div>
+              </li>
+              <li>
+                <div class="details_list_block details_list_block_left">
+                  Address 2
+                </div>
+                <div class="details_list_block details_list_block_right">
+                  {{activeMemberDetails?.secondAddressLine ? activeMemberDetails.secondAddressLine : 'N/A'}}
+                </div>
+              </li>
+              <li>
+                <div class="details_list_block details_list_block_left">
+                  Country
+                </div>
+                <div class="details_list_block details_list_block_right">
+                  {{activeMemberDetails?.country ? activeMemberDetails.country : 'N/A'}}
+                </div>
+              </li>
+              <li>
+                <div class="details_list_block details_list_block_left">
+                  State
+                </div>
+                <div class="details_list_block details_list_block_right">
+                  {{activeMemberDetails?.state ? activeMemberDetails.state : 'N/A'}}
+                </div>
+              </li>
+              <li>
+                <div class="details_list_block details_list_block_left">
+                  City
+                </div>
+                <div class="details_list_block details_list_block_right">
+                  {{activeMemberDetails?.city ? activeMemberDetails.city : 'N/A'}}
+                </div>
+              </li>
+              <li>
+                <div class="details_list_block details_list_block_left">
+                  Zipcode
+                </div>
+                <div class="details_list_block details_list_block_right">
+                  {{activeMemberDetails?.zipcode ? activeMemberDetails.zipcode : 'N/A'}}
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- details_block_box -- right -- end  -->
+
+
+      </div>
+
+      <!-- member details mid block section -- end ---  -->
+
+      <!-- table area start -->
+      <div class="tableBox tableBox_memberDetails">
+        <div class="table-responsive">
+          <table class="table_list" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Member ID</th>
+                    <th>Member Name</th>
+                    <th>User group</th>
+                    <th>Gender</th>
+                    <th>Year of Birth</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of addActiveMemberDetails?.filterFamilymembers; let i = index">
+                <td>{{current*10-(9-i)}}</td>
+                <!-- <td>{{i+1}}</td> -->
+                <td>{{item.memberName ? item.memberName : 'N/A'}}</td>
+                <td>{{item.relationType ? item.relationType : 'N/A'}}</td>
+                <td>{{item.gender ? item.gender : 'N/A'}}</td>
+                <td>{{item.yearOfBirth ? item.yearOfBirth : 'N/A'}}</td>
+                <td>{{item.email ? item.email : 'N/A'}}</td>
+                <td>{{item.phone ? item.phone : 'N/A'}}</td>
+              </tr>
+              <tr *ngIf="!addActiveMemberDetails?.filterFamilymembers?.length">
+                <td colspan="7">No Data Found</td>
+            </tr>
+
+               <!-- <tr>
+                  <td>ID1234</td>
+                  <td>Mr. Jhone Doe</td>
+                  <td>Spouse / Partner</td>
+                  <td>Male</td>
+                  <td>1990</td>
+                  <td>jhone@gmail.com</td>
+                  <td>+91 000 000 0000</td>
+                </tr>
+                <tr>
+                  <td>ID1234</td>
+                  <td>Mr. Jhone Doe</td>
+                  <td>Spouse / Partner</td>
+                  <td>Male</td>
+                  <td>1990</td>
+                  <td>jhone@gmail.com</td>
+                  <td>+91 000 000 0000</td>
+                </tr>
+                <tr>
+                  <td>ID1234</td>
+                  <td>Mr. Jhone Doe</td>
+                  <td>Spouse / Partner</td>
+                  <td>Male</td>
+                  <td>1990</td>
+                  <td>jhone@gmail.com</td>
+                  <td>+91 000 000 0000</td>
+                </tr>
+                <tr>
+                  <td>ID1234</td>
+                  <td>Mr. Jhone Doe</td>
+                  <td>Spouse / Partner</td>
+                  <td>Male</td>
+                  <td>1990</td>
+                  <td>jhone@gmail.com</td>
+                  <td>+91 000 000 0000</td>
+                </tr> -->
+
+            </tbody>
+          </table>
+        </div>
+        <ng-template [ngIf]="total && total!==0">
+          <div class="table_pagination_sec">
+            <div class="table_pagi_left pagination_block">
+              <span *ngIf="totalData > 10"><app-pagination 
+              [current]="current" [total]="total" (goTo)="onGoTo($event)" (next)="onNext($event)" (previous)="onPrevious($event)"
+              ></app-pagination></span>
+            </div>
+            <div class="table_pagi_right">
+              <p>Showing 1 - {{totalData}}</p>
+            </div> 
+          </div>
+        </ng-template>
+      </div>
+       <!-- table area end -->
+
+
+  </div>
+  <!-- ===  Active member section -- end === -->
+
+
+</div>

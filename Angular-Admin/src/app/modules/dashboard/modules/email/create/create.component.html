@@ -1,0 +1,225 @@
+<!-- page title -- section -- start  -->
+<div class="page_top_title filter-headingArea">
+  <h4 >Create Email</h4>
+  <div class="filterArea">
+    <!-- -- back btn section start --  -->
+    <div class="top_back_section">
+      <a href="#">Back to list</a>
+    </div>
+    <!-- -- back btn section start --  -->
+  </div>
+</div>
+
+<form >
+  <!-- === Edit web page Compontnt -- tab content body -- section -- start ===  -->
+  <div class="edit_webPage_tab_body_bg ">
+
+
+    <div class="onboard_form onboard_form_big edit_webPage onboard_form_event" >
+
+      <!-- onboard_form_row  -->
+      <div class="onboard_form_row gpa_30 onboard_form_big_imgblock editWeb_img_up mb_30">
+
+        <div class="onboard_form_box width_50" >
+          <div class="onboard_form_input ">
+            <div class="onboard_form_input onboard_input_border">
+              <label class="form_label_green mb_10">Select Event Name</label>
+              <select class="input_appearance_none filter_input onboard_select" >
+                <option value="" disabled selected hidden>Select Event Name</option>
+                <option value="Free"> Event 001 </option>
+                <option value="Paid"> Event 220 </option>
+              </select>
+            </div>
+            <div class="form_input_row_error">
+              <div class="form_field_error_msg">
+                Error message
+              </div>
+            </div>
+          </div>
+        </div>
+
+         <!--event banner image -- start -->
+        <div class="announcement_box_block ">
+          <div class="announcement_box_block_top announcement_box_pink">
+            <div class="announcement_left_round_img">
+              <img class="announcement_left_default_img" src="assets/images/banner-img-up.png" >
+              <img class="announcement_left_upload_img" src="assets/images/banner-img-up.png" style="display: none;" >
+            </div>
+            <div class=" up_img_delete_btn_block" >
+              <button class="button_appearance_none up_img_delete_btn" >
+                <img src="assets/images/trash-delete.png">
+              </button>
+            </div>
+            <div class="announcement_top_des">
+
+              <!-- img / upload img -- start -->
+              <div class="profile_img_edit_btn_block">
+                <button class="button_appearance_none profile_edit_btn">
+                  <img src="assets/images/profileimage-edit-btn.png">
+                </button>
+                <input class="input_appearance_none input_upload_btn" type="file"   />
+              </div>
+              <!-- img / upload img -- end -->
+
+              <h4>Choose Event Image</h4>
+              <p>(Image size should be within 2-5MB)</p>
+            </div>
+
+             <!-----Image croped start----->
+<!--
+             <div class="crop_window"  *ngIf="openCropImageModal">
+                  <image-cropper
+                        [imageChangedEvent]="imageChangedEvent"
+                        [maintainAspectRatio]="true"
+                        [aspectRatio]="1"
+                        (imageCropped)="cropImg($event, 'eventImage')">
+                  >
+                </image-cropper>
+                <div class="crop_btn_bottom">
+                  <button class="button_appearance_none crop_btn crop_btn_close" *ngIf="openCropImageModal"   (click)="closeImage('eventImage')">
+                    <img src="assets/images/crosspink.png">
+                  </button>
+                  <button class="button_appearance_none crop_btn crop_btn_done" *ngIf="openCropImageModal" (click)="saveImage('eventImage')">
+                    <img src="assets/images/tick.png">
+                  </button>
+                </div>
+              </div>
+-->
+                <!-----Image croped end------->
+
+          </div>
+          <div class="form_input_row_error textRight">
+            <div class="form_field_error_msg">
+              Error message
+            </div>
+          </div>
+        </div>
+         <!--event banner image -- end -->
+
+      </div>
+      <!-- onboard_form_row  -->
+
+      <!-- onboard_form_row  -->
+      <div class="onboard_form_row gpa_30 " >
+        <div class="onboard_form_box width_100">
+          <div class="onboard_form_input ">
+            <div class="onboard_form_input onboard_input_border">
+              <label class="form_label_green mb_10">Mail Template Name *</label>
+                <input class="input_appearance_none" type="text" placeholder="Mail Template Name *"  >
+            </div>
+            <div class="form_input_row_error">
+              <div class="form_field_error_msg">
+                Error message
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- onboard_form_row  -->
+
+      <!-- onboard_form_row  -->
+      <div class="onboard_form_row gpa_30 " >
+        <div class="onboard_form_box width_100">
+          <div class="onboard_form_input ">
+            <div class="onboard_form_input onboard_input_border">
+              <label class="form_label_green mb_10">Mail Header *</label>
+                <input class="input_appearance_none" type="text" placeholder="Mail Header *"  >
+            </div>
+            <div class="form_input_row_error">
+              <div class="form_field_error_msg">
+                Error message
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- onboard_form_row  -->
+
+      <!-- onboard_form_row  -->
+      <div class="onboard_form_row gpa_30 " >
+        <div class="onboard_form_box width_100">
+          <div class="onboard_form_input ">
+            <div class="onboard_form_input onboard_input_border">
+              <label class="form_label_green mb_10">Mail Title *</label>
+                <input class="input_appearance_none" type="text" placeholder="Mail Title *"  >
+            </div>
+            <div class="form_input_row_error">
+              <div class="form_field_error_msg">
+                Error message
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- onboard_form_row  -->
+
+      <!-- onboard_form_row  -->
+      <div class="onboard_form_row describe_textarea ">
+        <div class="block_sec_title_row">
+          <label class="form_label_green mb_10">Customized Message *</label>
+        </div>
+        <div class="textArea_block editWebPage_row">
+          <textarea class="input_appearance_none editWeb_textArea" formControlName="description"></textarea>
+        </div>
+        <div class="form_input_row_error" >
+          <div class="form_field_error_msg">
+            Error message
+          </div>
+        </div>
+      </div>
+      <!-- onboard_form_row  -->
+
+      <!-- onboard_form_row -- ck editor block row -- start  -->
+      <div class="onboard_form_row describe_textarea ">
+        <div class="block_sec_title_row">
+          <!-- <h4 class="block_sec_title green_text">Description of the Organization</h4> -->
+          <label class="form_label_green mb_10">Customized Message CK Editor </label>
+        </div>
+        <div class="textArea_block editWebPage_row" >
+          <!-- <ckeditor class="input_appearance_none editWeb_textArea" ></ckeditor> -->
+          <div class="text_count_block">
+            123/500
+          </div>
+        </div>
+        <div class="form_input_row_error ">
+          <div class="form_field_error_msg">
+            Error message
+          </div>
+        </div>
+      </div>
+      <!-- onboard_form_row -- ck editor block row -- end  -->
+
+      <!-- onboard_form_row  -->
+      <div class="onboard_form_row gpa_30 " >
+        <div class="onboard_form_box width_100">
+          <div class="onboard_form_input ">
+            <label class="form_label_green mb_10">Event Details Links of the Publicity Website</label>
+            <div class="onboard_form_input onboard_input_border onboard_form_currency_input">
+                <input class="input_appearance_none url_input" type="text" placeholder="URL Links" value="https://www.youtube.com/watch?v=eIrMbAQSU34"  >
+                <div class="currency_input_block"><span class="currency_input_active"> Active / Inactive </span></div>
+            </div>
+            <div class="form_input_row_error">
+              <div class="form_field_error_msg">
+                Error message
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- onboard_form_row  -->
+
+
+      <!-- ---- Edit Web Page bottom Button section -- start ---  -->
+      <div class="onboard_form_row onboard_form_row_btn onboard_form_row_btn_outside editWeb_sub_button_section">
+        <button class="button_appearance_none onboard_form_btn onboard_form_btn_green" type="submit" >Cancel</button>
+        <button class="button_appearance_none onboard_form_btn onboard_form_btn_pink" type="button" >Save as draft</button>
+        <button class="button_appearance_none onboard_form_btn onboard_form_btn_yellow" type="button" >Save & Publish</button>
+      </div>
+      <!-- ---- Edit Web Page bottom Button section -- end ---  -->
+
+    </div>
+
+  </div>
+  <!-- === Edit web page Compontnt -- tab content body -- section -- end ===  -->
+
+</form>

@@ -1,0 +1,20 @@
+/* Colors variables */
+:root {
+  --blue: #008C88;
+  --white: #ffffff;
+  --black: #000;
+  --orenge:#ED8015;
+  --yellow: #FFB345;
+  --pink:#E15C5D;
+  --lightBlue: #008C88;
+  --darkyellow:#FCA62A;
+  --darkgrey:#141414;
+  --lightgrey:#2D2D2D;
+  --grey:#3E3E3E;
+  --btnHoverColor: #ED8015;
+  --tdcolor:#181818;
+  --whitegrey:#888C8C;
+  --inputColor:#B2B5B5;
+}
+  
+/* var(--lightBlue); */
